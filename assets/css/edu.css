@@ -1,0 +1,14 @@
+.member-info {
+    margin-left: 15px;
+  }
+  
+  .member .pic img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .member .btn {
+    margin-top: 10px;
+  }
