@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
     {
       date: '2024-09-25',
       title: 'The Alignment of LLMs Through the Lens of Data and Algorithms - Resource Person Prof. Radha Poovendran',
-      url: '' // Link for ICAC 2024 Conference
+      image: 'assets/img/events/sep25.jpg'
    },
     {
       date: '2024-12-12',
@@ -259,23 +259,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 const eventDay = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
                 const eventForDay = events.find(e => e.date === eventDay);
                 if (eventForDay) {
-                    const eventLink = document.createElement('a');
-                    eventLink.href = eventForDay.url;
-                    eventLink.textContent = eventForDay.title;
-                    eventLink.classList.add('event-link');
-                    eventLink.style.textDecoration = 'none';
-                    eventLink.style.color = '#fff'; // White text color for contrast
-                    eventLink.style.display = 'inline-block';
-                    eventLink.style.padding = '2px 6px';
-                    eventLink.style.backgroundColor = '#28a745'; // Green background like a badge
-                    eventLink.style.borderRadius = '4px'; // Rounded corners for the badge
-                    eventLink.style.marginTop = '4px'; // Add margin to separate from date
-                    eventLink.style.fontSize = '0.85em'; // Adjust font size
-                    eventLink.target = "_blank"; // Optional: Open link in new tab
-
-                    td.appendChild(document.createElement('br')); // Add space between date and event
-                    td.appendChild(eventLink);
-                }
+                  const eventElement = document.createElement('span');
+                  eventElement.textContent = eventForDay.title;
+                  eventElement.classList.add('event-link');
+                  eventElement.style.textDecoration = 'none';
+                  eventElement.style.color = '#fff';
+                  eventElement.style.display = 'inline-block';
+                  eventElement.style.padding = '2px 6px';
+                  eventElement.style.backgroundColor = '#28a745';
+                  eventElement.style.borderRadius = '4px';
+                  eventElement.style.marginTop = '4px';
+                  eventElement.style.fontSize = '0.85em';
+                  eventElement.style.cursor = 'pointer';
+              
+                  if (eventForDay.image) {
+                      // Show image preview on click
+                      eventElement.addEventListener('click', () => showImage(eventForDay.image));
+                  } else if (eventForDay.url) {
+                      // Open link on click
+                      eventElement.addEventListener('click', () => {
+                          window.open(eventForDay.url, '_blank'); // Open the link in a new tab
+                      });
+                  }
+              
+                  td.appendChild(document.createElement('br')); // Add space between date and event
+                  td.appendChild(eventElement);
+              }
                 date++;
                 hasDates = true; // Mark this row as having at least one date
             }
@@ -289,10 +298,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function showImage(imageSrc) {
-    // Check if a modal already exists; if not, create it
     let modal = document.getElementById('image-modal');
     if (!modal) {
-        // Create the modal div and set its attributes
         modal = document.createElement('div');
         modal.id = 'image-modal';
         modal.style.position = 'fixed';
@@ -306,14 +313,12 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.alignItems = 'center';
         modal.style.zIndex = '1000';
 
-        // Create the image element
         const img = document.createElement('img');
         img.id = 'modal-image';
         img.style.maxWidth = '90%';
         img.style.maxHeight = '90%';
         modal.appendChild(img);
 
-        // Add an event listener to close the modal when clicked
         modal.addEventListener('click', function() {
             modal.style.display = 'none';
         });
@@ -321,7 +326,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(modal);
     }
 
-    // Set the source of the image and display the modal
     const img = document.getElementById('modal-image');
     img.src = imageSrc;
     modal.style.display = 'flex';
