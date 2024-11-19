@@ -1,0 +1,23 @@
+td {
+    width: 14.2857%; /* Ensures each cell occupies 1/7th of the row width */
+    height: 80px; /* Fixed height to maintain consistent cell size */
+    vertical-align: top;
+    text-align: center;
+    overflow: hidden; /* Prevents content from overflowing outside */
+    position: relative; /* To position child elements if needed */
+    padding: 4px; /* Add padding to ensure content doesn't touch edges */
+}
+
+.event-link {
+    text-decoration: none;
+    color: #fff;
+    display: block; /* Allows for controlled wrapping */
+    padding: 2px 6px; /* Padding for a badge-like appearance */
+    background-color: #28a745; /* Green background for events */
+    border-radius: 4px;
+    font-size: 0.75em; /* Smaller font size to fit within cell */
+    max-width: 100%; /* Ensures text does not overflow */
+    white-space: normal; /* Allows text to wrap */
+    word-wrap: break-word; /* Breaks long words if necessary */
+    margin-top: 4px; /* Margin to separate from date */
+}

@@ -210,21 +210,21 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   let events = [
-    
-      {
-        date: '2024-05-17',
-        title: 'GenAI in Education : Opportunities and Challenges',
-       // image: 'assets/img/r4.jpg',
-        url: 'https://us02web.zoom.us/meeting/register/tZAqceGoqjIsH9F5OmrizbBkoNB2BXPSeWEr' // Add the URL here
-     },
-  //    {
-  //     date: '2024-05-16',
-  //     title: 'Pre register to the Workshop',
-  //    // image: 'assets/img/r4.jpg',
-  //     url: 'https://us02web.zoom.us/meeting/register/tZAqceGoqjIsH9F5OmrizbBkoNB2BXPSeWEr' // Add the URL here
-  //  },
-    // Add the event in here
-      
+    {
+      date: '2024-09-25',
+      title: 'The Alignment of LLMs Through the Lens of Data and Algorithms - Resource Person Prof. Radha Poovendran',
+      url: '' // Link for ICAC 2024 Conference
+   },
+    {
+      date: '2024-12-12',
+      title: 'ICAC 2024 Conference - Day 1',
+      url: 'https://icac.lk/' // Link for ICAC 2024 Conference
+   },
+   {
+      date: '2024-12-13',
+      title: 'ICAC 2024 Conference - Day 2',
+      url: 'https://icac.lk/' // Link for ICAC 2024 Conference
+   }
       
   ];
 
@@ -241,12 +241,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const firstDay = new Date(year, month).getDay();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-    monthDisplay.textContent = `${now.toLocaleString('default', { month: 'long' })} ${year}`;
+    // Corrected month display
+    monthDisplay.textContent = new Date(year, month).toLocaleString('default', { month: 'long', year: 'numeric' });
     calendarBody.innerHTML = '';
 
     let date = 1;
     for (let row = 0; row < 6; row++) {
         const tr = document.createElement('tr');
+        let hasDates = false; // Flag to check if this row contains any dates
+
         for (let col = 0; col < 7; col++) {
             const td = document.createElement('td');
             if (row === 0 && col < firstDay || date > daysInMonth) {
@@ -256,25 +259,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 const eventDay = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
                 const eventForDay = events.find(e => e.date === eventDay);
                 if (eventForDay) {
-                    const eventDiv = document.createElement('div');
-                    eventDiv.classList.add('event');
-
                     const eventLink = document.createElement('a');
-                    eventLink.href = eventForDay.url; // Use the URL from the event data
+                    eventLink.href = eventForDay.url;
                     eventLink.textContent = eventForDay.title;
                     eventLink.classList.add('event-link');
-                    eventDiv.appendChild(eventLink);
+                    eventLink.style.textDecoration = 'none';
+                    eventLink.style.color = '#fff'; // White text color for contrast
+                    eventLink.style.display = 'inline-block';
+                    eventLink.style.padding = '2px 6px';
+                    eventLink.style.backgroundColor = '#28a745'; // Green background like a badge
+                    eventLink.style.borderRadius = '4px'; // Rounded corners for the badge
+                    eventLink.style.marginTop = '4px'; // Add margin to separate from date
+                    eventLink.style.fontSize = '0.85em'; // Adjust font size
+                    eventLink.target = "_blank"; // Optional: Open link in new tab
 
-                    eventDiv.onclick = () => showImage(eventForDay.image);
-                    td.appendChild(eventDiv);
+                    td.appendChild(document.createElement('br')); // Add space between date and event
+                    td.appendChild(eventLink);
                 }
                 date++;
+                hasDates = true; // Mark this row as having at least one date
             }
             tr.appendChild(td);
         }
-        calendarBody.appendChild(tr);
+
+        if (hasDates) {
+            calendarBody.appendChild(tr); // Only append rows that contain dates
+        }
     }
-}
+  }
 
   function showImage(imageSrc) {
     // Check if a modal already exists; if not, create it
