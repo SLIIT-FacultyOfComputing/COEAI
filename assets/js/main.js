@@ -216,10 +216,20 @@ document.addEventListener('DOMContentLoaded', function() {
       image: 'assets/img/events/sep25.jpg'
    },
    {
+    date: '2024-12-07',
+    title: 'TinyML in Action',
+    image: 'assets/img/events/Workshop2.png'
+    },
+    {
+      date: '2024-12-08',
+      title: 'Exploring Spiking Neural Networks',
+      image: 'assets/img/events/Workshop1.png'
+      },
+   {
     date: '2024-12-11',
     title: 'Unleashing the Power of Generative AI in Research',
     image: 'assets/img/events/workshop3.png'
- },
+    },
     {
       date: '2024-12-12',
       title: 'ICAC 2024 Conference - Day 1',
