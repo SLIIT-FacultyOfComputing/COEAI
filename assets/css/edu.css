@@ -1,14 +1,70 @@
+/* Container styling for the member cards */
+.member {
+  border: 1px solid #ddd; /* Adds border around the card */
+  border-radius: 8px; /* Rounds corners */
+  padding: 20px; /* Adds padding inside the box */
+  background-color: #ffffff; /* Sets background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for a card effect */
+  transition: all 0.3s ease-in-out; /* Smooth hover transition */
+  height: auto; /* Adjusts to fit content */
+  display: flex; /* Sets flexbox layout */
+  align-items: center; /* Aligns items vertically */
+}
+
+/* Hover effect */
+.member:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Image styling */
+.member .pic {
+  margin-right: 15px; /* Adds space between image and text */
+}
+
+.member .pic img {
+  border-radius: 50%; /* Makes image circular */
+  width: 120px; /* Controls image size */
+  height: 120px; /* Ensures images are uniform in size */
+  object-fit: cover; /* Ensures images maintain aspect ratio */
+}
+
+/* Text and button alignment */
 .member-info {
-    margin-left: 15px;
-  }
-  
-  .member .pic img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-  }
-  
-  .member .btn {
-    margin-top: 10px;
-  }
+  text-align: left; /* Aligns text to the left */
+  flex-grow: 1; /* Allows the text container to take remaining space */
+}
+
+.member-info h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.member-info span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #555;
+}
+
+.member-info p {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #777;
+}
+
+.member-info .btn {
+  background-color: #17a2b8;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+.member-info .btn:hover {
+  background-color: #138496;
+}
