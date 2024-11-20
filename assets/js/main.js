@@ -215,6 +215,11 @@ document.addEventListener('DOMContentLoaded', function() {
       title: 'The Alignment of LLMs Through the Lens of Data and Algorithms - Resource Person Prof. Radha Poovendran',
       image: 'assets/img/events/sep25.jpg'
    },
+   {
+    date: '2024-12-11',
+    title: 'Unleashing the Power of Generative AI in Research',
+    image: 'assets/img/events/workshop3.png'
+ },
     {
       date: '2024-12-12',
       title: 'ICAC 2024 Conference - Day 1',
