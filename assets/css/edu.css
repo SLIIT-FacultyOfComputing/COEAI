@@ -142,8 +142,8 @@
   background-color: #007bff; /* Button background color */
   color: #fff; /* Button text color */
   border: none; /* Removes border */
-  padding: 7px 12px; /* Reduces padding to make the button smaller */
-  font-size: 12px; /* Reduces font size */
+  padding: 9px 12px; /* Reduces padding to make the button smaller */
+  font-size: 15px; /* Reduces font size */
   border-radius: 3px; /* Smaller rounded corners */
   cursor: pointer; /* Changes the cursor to pointer */
   transition: background-color 0.3s ease; /* Adds a hover transition effect */
