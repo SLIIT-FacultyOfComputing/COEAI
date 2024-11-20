@@ -895,24 +895,8 @@
               <div class="icon-box">
                   <div class="icon"><i class="bx bx-file"></i></div>
                   <h4><a href="">Exploring the use of Spiking Neural Networks in AI Applications</a></h4>
-                  <P>Resource Person : <br> Dr. Mahima Weerasinghe <br>
-                      Senior Lecturer (Higher Grade), Faculty of Computing, Sri Lanka Institute of Information Technology (SLIIT)
-                      <br><br>
-                      Artificial Spiking Neural Networks (ASNNs), inspired by the brain's efficiency in operating on just 20 watts of power, aim to emulate biological learning through precisely timed spikes. While ASNNs show promise for developing energy-efficient AI applications, their mainstream adoption is limited due to the lack of effective learning techniques for spike-based information encoding. This workshop explores leveraging brain-like plasticity mechanisms, such as Spike Time Dependent Plasticity and Intrinsic Plasticity, to enhance ASNN performance.
-                      <br><br>
-                  </P>
-                  <a href="https://icac.lk/preconference-workshops/" target="_blank">Workshop Details</a>
-              </div>
-          </div>
-      
-          <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-              <div class="icon-box">
-                  <div class="icon"><i class="bx bx-file"></i></div>
-                  <h4><a href="">Introduction to Bioinformatics</a></h4>
-                  <P>Resource Person : <br> Dr. Pasan Fernando <br>
-                      Senior Lecturer, Department of Plant Sciences, University of Colombo
-                      <br><br>
-                      The workshop “Introduction to Bioinformatics: Unraveling the Mysteries of Biological Data” is designed to provide participants with a basic understanding of the principles and applications of Bioinformatics. In this workshop, participants will delve into the fundamental concepts in Molecular Biology and Bioinformatics. Moreover, through a combination of lectures, hands-on exercises, and interactive discussions, participants will gain practical skills in bioinformatics data retrieval, sequence alignment, gene function prediction, and protein network analysis.
+                  <P style="text-align: justify;">
+                      Artificial Spiking Neural Networks (ASNNs), inspired by the brain's efficiency in operating on just 20 watts of power, aim to emulate biological learning through precisely timed spikes. This workshop explores leveraging brain-like plasticity mechanisms, such as Spike Time Dependent Plasticity and Intrinsic Plasticity, to enhance ASNN performance.
                       <br><br>
                   </P>
                   <a href="https://icac.lk/preconference-workshops/" target="_blank">Workshop Details</a>
@@ -922,16 +906,27 @@
           <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
               <div class="icon-box">
                   <div class="icon"><i class="bx bx-file"></i></div>
-                  <h4><a href="">TinyML in Action</a></h4>
-                  <P>Resource Person : <br> Dr. Dinuka Sahabandu <br>
-                      Senior Lecturer (Higher Grade), in the Department of Computer Science,  Faculty of Computing at Sri Lanka Institute of Information Technology (SLIIT)
-                      <br><br>
-                      This hands-on Tiny Machine Learning (TinyML) workshop focuses on embedding intelligence into resource-constrained devices, covering techniques such as quantization, pruning, and knowledge distillation to optimize models for microcontrollers like the Arduino Nano BLE. Participants will explore end-to-end TinyML applications with live demonstrations across various industries. Whether for beginners or advanced practitioners, the session provides practical insights and new research opportunities for efficient edge device deployment.
+                  <h4><a href="">Tiny Machine Learning (TinyML) in Action</a></h4>
+                  <P style="text-align: justify;">
+                      This hands-on Tiny Machine Learning (TinyML) workshop focuses on embedding intelligence into resource-constrained devices, covering techniques such as quantization, pruning, and knowledge distillation to optimize models for microcontrollers like the Arduino Nano BLE.
                       <br><br>
                   </P>
                   <a href="https://icac.lk/preconference-workshops/" target="_blank">Workshop Details</a>
               </div>
           </div>
+
+          <div class="col-xl-4 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+                <div class="icon"><i class="bx bx-file"></i></div>
+                <h4><a href="">Unleashing the Power of Generative AI in Research</a></h4>
+                <P style="text-align: justify;">
+                    This engaging workshop focuses on practical applications and actionable strategies for seamlessly integrating cutting-edge AI tools into your research process. Gain valuable insights and hands-on experience to: Enhance your research workflows, Maximize the potential of GenAI in your academic pursuits. 
+                    <br><br>
+                </P>
+                <img id="zoomableImg" src="assets/img/workshop3.png" alt="Workshop Poster" style="width:100%; cursor:pointer;">
+            </div>
+          </div>
+        </div>
       </div>
       
         <br>
@@ -963,7 +958,39 @@
         </div>
     </section><!-- End Cta Section -->
 
-
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var img = document.getElementById('zoomableImg');
+    
+        if (img) {
+          // Flag to track zoom state
+          var isZoomedIn = false;
+    
+          img.addEventListener('click', function (event) {
+            if (!isZoomedIn) {
+              this.style.transform = 'scale(1.5)';
+              this.style.transition = 'transform 0.25s ease';
+              isZoomedIn = true;
+            } else {
+              this.style.transform = '';
+              this.style.transition = '';
+              isZoomedIn = false;
+            }
+            event.stopPropagation(); // Prevent event from bubbling up to document
+          });
+    
+          // Add event listener to document to detect clicks outside of the image
+          document.addEventListener('click', function () {
+            if (isZoomedIn) {
+              img.style.transform = '';
+              img.style.transition = '';
+              isZoomedIn = false;
+            }
+          });
+        }
+      });
+    </script>
+    
 
     <!-- ======= News Section ======= -->
     <section id="faq" class="faq section-bg">
