@@ -132,3 +132,23 @@
   color: #0056b3;
   text-decoration: none;
 }
+
+.view-more-container {
+  text-align: right; /* Aligns the button to the left */
+  margin-top: 20px; /* Adds space above the button */
+}
+
+.view-more-btn {
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Removes border */
+  padding: 7px 12px; /* Reduces padding to make the button smaller */
+  font-size: 12px; /* Reduces font size */
+  border-radius: 3px; /* Smaller rounded corners */
+  cursor: pointer; /* Changes the cursor to pointer */
+  transition: background-color 0.3s ease; /* Adds a hover transition effect */
+}
+
+.view-more-btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
