@@ -218,12 +218,12 @@ document.addEventListener('DOMContentLoaded', function() {
    {
     date: '2024-12-07',
     title: 'TinyML in Action',
-    image: 'assets/img/events/Workshop2.png'
+    image: 'assets/img/events/workshop1.png'
     },
     {
       date: '2024-12-08',
       title: 'Exploring Spiking Neural Networks',
-      image: 'assets/img/events/Workshop1.png'
+      image: 'assets/img/events/workshop2.png'
       },
    {
     date: '2024-12-11',
